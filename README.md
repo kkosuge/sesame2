@@ -1,8 +1,7 @@
 # Sesame2
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/sesame2`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem is a simple library for using the Sesame Web API to unlock and lock SESAME 3 and SESAME 4.
+https://doc.candyhouse.co/ja/SesameAPI
 
 ## Installation
 
@@ -22,7 +21,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+client = Sesame2::Client.new(
+  api_key: "Get from the CANDYHOUSE Dashboard"
+)
+
+sesame = client.sesame(
+  sesame2_uuid: "Get from your Sesame App",
+  key_secret_hex: "Good luck getting it from your Sesame App"
+)
+
+p sesame.status
+p sesame.toggle(history: 'test')
+```
 
 ## Development
 
@@ -32,7 +43,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/sesame2. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/sesame2/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/kkosuge/sesame2. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/kkosuge/sesame2/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -40,4 +51,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Sesame2 project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/sesame2/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Sesame2 project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/kkosuge/sesame2/blob/master/CODE_OF_CONDUCT.md).
